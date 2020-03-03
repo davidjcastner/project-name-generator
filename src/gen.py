@@ -4,9 +4,8 @@ import sys
 
 
 def readfile(filename):
-    f = open(filename, 'r')
-    lines = f.readlines()
-    f.close()
+    with open(filename, 'r') as f:
+        lines = f.readlines()
     if len(lines) == 0:
         return []
     while lines[-1].strip() == '':
